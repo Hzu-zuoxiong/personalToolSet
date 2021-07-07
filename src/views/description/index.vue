@@ -1,24 +1,20 @@
 <template>
-  <div class="dashboard-container">
-    <div class="dashboard-text">name: {{ name }}</div>
+  <div class="Description-container">
+    <div class="Description-text">Description</div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 
 export default {
-  name: 'Dashboard',
+  name: 'Description',
   computed: {
-    ...mapGetters([
-      'name'
-    ])
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.dashboard {
+.Description {
   &-container {
     margin: 30px;
   }
