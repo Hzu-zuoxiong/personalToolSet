@@ -13,6 +13,8 @@ import store from './store'
 import router from './router'
 
 import '@/icons' // icon
+import { PrismEditor } from 'vue-prism-editor'
+import 'vue-prism-editor/dist/prismeditor.min.css' // import the styles
 
 /**
  * If you don't want to use mock-server
@@ -32,6 +34,7 @@ Vue.use(ElementUI, { locale })
 // 如果想要中文版 element-ui，按如下方式声明
 // Vue.use(ElementUI)
 
+Vue.component('PrismEditor', PrismEditor)
 Vue.config.productionTip = false
 
 new Vue({

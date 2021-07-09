@@ -1,0 +1,64 @@
+// 文本色
+$color-text-title: #222222;
+$color-text-primary: #555555;
+$color-text-secondary: #888888;
+$color-text-hint: #9B9B9B;
+$color-text-white: #FFFFFF;
+$color-text-important: #EA2D2D;
+
+// 中性色
+$color-g1: #CCCCCC;
+$color-g2: #E5E5E5;
+$color-g3: #F5F5F5;
+$color-g4: #FAFAFA;
+$color-g5: #FFFFFF;
+
+$colorArray: (
+  text-title: $color-text-title,
+  text-primary: $color-text-primary,
+  text-secondary: $color-text-secondary,
+  text-hint: $color-text-hint,
+  text-important: $color-text-important,
+  text-white: $color-text-white,
+  g1: $color-g1,
+  g2: $color-g2,
+  g3: $color-g3,
+  g4: $color-g4,
+  g5: $color-g5,
+);
+
+// 公共颜色工具类 fg-primary, fg-text-primary 等
+@each $colorName, $color in $colorArray {
+  .fg-#{$colorName} { // 前景色
+    color: $color;
+  }
+  .bg-#{$colorName} { // 背景色
+    background-color: $color;
+  }
+}
+
+// 上右下左外边距
+@each $t in (2, 4, 5, 10, 15, 16, 20, 40, 48) {
+  .mar-t-#{$t} {
+    margin-top: #{$t}px;
+  }
+}
+@each $r in (2, 4, 5, 10, 15, 16, 20, 40, 48) {
+  .mar-r-#{$r} {
+    margin-right: #{$r}px;
+  }
+}
+@each $b in (2, 4, 5, 10, 15, 16, 20, 40, 48) {
+  .mar-b-#{$b} {
+    margin-bottom: #{$b}px;
+  }
+}
+@each $l in (2, 4, 5, 10, 15, 16, 20, 40, 48) {
+  .mar-l-#{$l} {
+    margin-left: #{$l}px;
+  }
+}
+
+.link {
+  color: #3D7EFF;
+}

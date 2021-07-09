@@ -36,7 +36,6 @@ export const constantRoutes = [
     component: () => import('@/views/404'),
     hidden: true
   },
-
   {
     path: '/',
     component: Layout,
@@ -47,6 +46,18 @@ export const constantRoutes = [
       component: () => import('@/views/description/index'),
       meta: { title: 'Description', icon: 'dashboard' }
     }]
+  },
+  {
+    path: '/picMagnifier',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'picMagnifier',
+        component: () => import('@/views/picMagnifier/index'),
+        meta: { title: 'picMagnifier', icon: 'eye-open' }
+      }
+    ]
   },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
