@@ -23,22 +23,17 @@ jobs:
         with:
           node-version: "12.x"
 
-      # Runs a single command using the runners shell
-      - name: Build toolSet
-        run: echo Hello, world!
-
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Build toolSet
         run: |
           npm install
           npm run build:prod
-          
+
       - uses: manyuanrong/setup-ossutil@v2.0
         with:
           endpoint:  "oss-cn-beijing.aliyuncs.com"
-          # 使用我们之前配置在secrets里面的accesskeys来配置ossutil:
           access-key-id: ${{ secrets.ACCESS_KEY_ID }}
           access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
       - name: Deploy To OSS
         run: ossutil cp dist oss://toolset/ -rf
-          
+
